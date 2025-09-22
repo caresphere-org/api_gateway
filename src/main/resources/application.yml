@@ -1,0 +1,14 @@
+server:
+  port:9000
+
+# User MS
+spring:
+  application:
+    name: api_gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/user/**
